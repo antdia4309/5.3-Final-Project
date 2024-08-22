@@ -1,0 +1,142 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Container */
+.App {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+/* Header */
+header {
+  background-color: #007bff;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+/* Main Section */
+main {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  column-gap: 20px;
+  grid-row-gap: 5px;
+}
+
+/* Section Styles */
+section {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+  margin-bottom: 10px;
+  color: #007bff;
+}
+
+/* Search Form */
+input[type="text"] {
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: calc(100% - 120px); /* Adjust width for the button */
+}
+
+button {
+  padding: 12px 20px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+@import "leaflet/dist/leaflet.css";
+
+/* Responsive Design */
+
+/* For tablets and smaller screens */
+@media (max-width: 768px) {
+  main {
+    grid-template-columns: 1fr; /* Stack sections vertically */
+  }
+
+  input[type="text"] {
+    width: 100%; /* Full width input */
+    margin-bottom: 10px;
+  }
+
+  button {
+    width: 100%; /* Full width buttons */
+    margin-bottom: 10px;
+  }
+
+  header h1 {
+    font-size: 1.5rem; /* Smaller font size for header */
+  }
+}
+
+/* For mobile phones */
+@media (max-width: 480px) {
+  .App {
+    padding: 10px; /* Reduce padding */
+  }
+
+  section {
+    padding: 15px; /* Reduce section padding */
+  }
+
+  header h1 {
+    font-size: 1.25rem; /* Smaller font size for header */
+  }
+
+  button {
+    padding: 10px 15px; /* Adjust button padding */
+  }
+}
+
+/* Custom breakpoint for larger screens */
+@media (min-width: 1200px) {
+  .App {
+    max-width: 1400px; /* Increase max width for larger screens */
+  }
+
+  header h1 {
+    font-size: 2.5rem; /* Larger header text */
+  }
+}

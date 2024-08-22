@@ -1,0 +1,34 @@
+/* RichmondMap.css */
+
+.richmond-map-container {
+    width: 100%;
+    height: 300px; /* Adjust the height as necessary */
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Leaflet Map Specific Styles */
+  .leaflet-container {
+    border-radius: 8px; /* Match the border radius */
+  }
+  
+  .leaflet-popup-content-wrapper {
+    border-radius: 8px; /* Match the border radius of the popup */
+  }
+  
+  .leaflet-popup-tip {
+    background: #007bff; /* Match the popup tip with your primary color */
+  }
+  
+  .leaflet-popup-content {
+    font-family: Arial, sans-serif; /* Match the font */
+    font-size: 14px;
+  }
+  
+  .leaflet-control-attribution {
+    display: none; /* Optionally hide the attribution if it doesn't fit the design */
+  }
+  
