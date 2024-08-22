@@ -18,13 +18,13 @@ function App() {
   const handleReserveSpot = (locationName) => {
     setParkingData(prevData =>
       prevData.map(spot =>
-        spot.location === locationName && spot.availableSpots > 0
+        spot.location.toLowerCase() === locationName.toLowerCase() && spot.availableSpots > 0
           ? { ...spot, availableSpots: spot.availableSpots - 1 }
           : spot
       )
     );
 
-    const reserveSpot = parkingData.find(spot => spot.location === locationName);
+    const reserveSpot = parkingData.find(spot => spot.location.toLowerCase() === locationName.toLowerCase());
 
     if (reserveSpot) {
       setReservationDetails(`Spot reserved at ${reserveSpot.location}. Remaining spots: ${reserveSpot.availableSpots - 1}`);
