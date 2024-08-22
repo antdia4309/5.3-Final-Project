@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './SearchForm.css';
 
-function SearchForm({ parkingData, setReservationDetails, onReserveSpot }) {
+function SearchForm({ parkingData, setReservationDetails, onReserveSpot, onCancelReservation }) {
   const [location, setLocation] = useState('');
   const [error, setError] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
@@ -71,6 +71,7 @@ function SearchForm({ parkingData, setReservationDetails, onReserveSpot }) {
     setReservationStatus(<strong>Reservation has been cancelled</strong>);
     setReservationDetails(null);
     setSearchMessage('');
+    onCancelReservation(location);
   };
 
   return (

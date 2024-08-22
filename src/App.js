@@ -34,11 +34,21 @@ function App() {
     }
   };
 
+  const handleCancelReservation = (locationName) => {
+    setParkingData(prevData =>
+      prevData.map(spot =>
+        spot.location.toLowerCase() === locationName.toLowerCase() && spot.availableSpots > 0
+          ? { ...spot, availableSpots: spot.availableSpots + 1 }
+          : spot
+      )
+    );
+  };  
+
   return (
     <div className="App">
       <Header />
       <main>
-        <SearchForm parkingData={parkingData} setReservationDetails={setReservationDetails} onReserveSpot={handleReserveSpot}/>
+        <SearchForm parkingData={parkingData} setReservationDetails={setReservationDetails} onReserveSpot={handleReserveSpot} onCancelReservation={handleCancelReservation} />
         <RichmondMap />
         <ReservationDetails details={reservationDetails} />
         <ParkingChart data={parkingData} />
