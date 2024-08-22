@@ -4,7 +4,7 @@ import './Header.css';
 function Header() {
   return (
     <header>
-      <h1>ParkFinder - antdia4309</h1>
+      <h1>ParkFinder</h1>
     </header>
   );
 }

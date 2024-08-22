@@ -13,6 +13,7 @@ function App() {
     { location: 'Shockoe Bottom', availableSpots: 7 },
     { location: 'The Fan', availableSpots: 2 },
     { location: 'Scotts Addition', availableSpots: 10 },
+    { location: 'Carytown', availableSpots: 0}
   ]);
 
   const handleReserveSpot = (locationName) => {
