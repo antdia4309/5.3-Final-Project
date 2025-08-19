@@ -38,12 +38,12 @@ function App() {
   const handleCancelReservation = (locationName) => {
     setParkingData(prevData =>
       prevData.map(spot =>
-        spot.location.toLowerCase() === locationName.toLowerCase() && spot.availableSpots > 0
+        spot.location.toLowerCase() === locationName.toLowerCase()
           ? { ...spot, availableSpots: spot.availableSpots + 1 }
           : spot
       )
     );
-  };  
+  };
 
   return (
     <div className="App">
