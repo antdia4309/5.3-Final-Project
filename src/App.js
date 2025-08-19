@@ -6,15 +6,17 @@ import RichmondMap from './components/RichmondMap';
 import ReservationDetails from './components/ReservationDetails';
 import ParkingChart from './components/ParkingChart';
 
-function App() {
+function App({ initialParkingData }) {
   const [reservationDetails, setReservationDetails] = useState('');
-  
-  const [parkingData, setParkingData] = useState([
-    { location: 'Shockoe Bottom', availableSpots: 7 },
-    { location: 'The Fan', availableSpots: 2 },
-    { location: 'Scotts Addition', availableSpots: 10 },
-    { location: 'Carytown', availableSpots: 22}
-  ]);
+
+  const [parkingData, setParkingData] = useState(
+    initialParkingData || [
+      { location: 'Shockoe Bottom', availableSpots: 7 },
+      { location: 'The Fan', availableSpots: 2 },
+      { location: 'Scotts Addition', availableSpots: 10 },
+      { location: 'Carytown', availableSpots: 22 }
+    ]
+  );
 
   const handleReserveSpot = (locationName) => {
     setParkingData(prevData =>
@@ -38,12 +40,12 @@ function App() {
   const handleCancelReservation = (locationName) => {
     setParkingData(prevData =>
       prevData.map(spot =>
-        spot.location.toLowerCase() === locationName.toLowerCase() && spot.availableSpots > 0
-          ? { ...spot, availableSpots: spot.availableSpots + 1 }
+        spot.location.toLowerCase() === locationName.toLowerCase()
+          ? { ...spot, availableSpots: Math.max(spot.availableSpots + 1, 0) }
           : spot
       )
     );
-  };  
+  };
 
   return (
     <div className="App">
