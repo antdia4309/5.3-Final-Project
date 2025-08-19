@@ -1,8 +1,13 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
+import React from 'react';
 
-test('renders learn react link', () => {
+// Mock components that rely on browser-specific APIs
+jest.mock('./components/RichmondMap', () => () => <div>Mocked RichmondMap</div>);
+jest.mock('./components/ParkingChart', () => () => <div>Mocked ParkingChart</div>);
+
+test('renders ParkingFinder header', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const headerElement = screen.getByText(/ParkingFinder/i);
+  expect(headerElement).toBeInTheDocument();
 });
